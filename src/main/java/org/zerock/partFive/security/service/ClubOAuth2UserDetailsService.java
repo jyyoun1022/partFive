@@ -23,8 +23,10 @@ public class ClubOAuth2UserDetailsService extends DefaultOAuth2UserService {
         log.info("Client name :  "+clientName);
         log.info(userRequest.getAdditionalParameters());
 
-        OAuth2User oAuth2User = loadUser(userRequest);
-
-        return super.loadUser(userRequest);
+        OAuth2User oAuth2User = super.loadUser(userRequest);
+        oAuth2User.getAttributes().forEach((k,v)->{
+            log.info(k+" : "+v);
+        });
+        return oAuth2User;
     }
 }
