@@ -11,7 +11,7 @@ import java.util.Collection;
 
 @Log4j2
 @Getter
-@Setter
+
 @ToString
 public class ClubAuthMemberDTO extends User {
 
